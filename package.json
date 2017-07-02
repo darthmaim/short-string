@@ -1,0 +1,41 @@
+{
+  "name": "short-string",
+  "version": "0.0.1",
+  "description": "Function to create short strings.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run test:coverage --silent",
+    "test:coverage": "nyc --all --include=src --reporter=lcov --reporter=text-summary --report-dir=coverage npm run test:mocha",
+    "test:mocha": "mocha --compilers js:babel-core/register tests/**/*.spec.js",
+    "clean": "rimraf lib",
+    "build": "BABEL_ENV=commonjs babel src --out-dir lib",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darthmaim/short-string.git"
+  },
+  "keywords": [
+    "short",
+    "string"
+  ],
+  "author": "darthmaim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darthmaim/short-string/issues"
+  },
+  "homepage": "https://github.com/darthmaim/short-string#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3",
+    "rimraf": "^2.6.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
