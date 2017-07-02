@@ -18,7 +18,7 @@ export default function factory(characters, charactersExtra) {
         
         // Check the cache for this value
         // This helps to keep the recursion fast, because shortString
-        //  should always be called with incrementing numbers.
+        // should always be called with incrementing numbers.
         if(cache[num]) {
             return cache[num];
         }

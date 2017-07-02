@@ -72,7 +72,7 @@ This is an example namer function for [modular-css](https://github.com/tivac/mod
 ```js
 function shortStringNamer() {
     const known = {};
-    const nextIndex = 0;
+    let nextIndex = 0;
 
     return function(file, selector) {
         const id = file + selector;
