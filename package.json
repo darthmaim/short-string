@@ -1,6 +1,6 @@
 {
   "name": "short-string",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Function to create short strings.",
   "main": "lib/index.js",
   "scripts": {
