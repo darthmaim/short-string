@@ -25,7 +25,7 @@ npm install --save short-string
 
 ## Usage
 
-### Default short-string
+### shortString(num)
 
 ```js
 import shortString from 'short-string';
@@ -37,8 +37,7 @@ shortString(0)
 Parameters:
 * `num` - A `Number` identifying the index of the occurrence.
 
-
-### Factory
+### shortStringFactory(characters, charactersExtra)
 
 ```js
 import shortStringFactory from 'short-string/lib/factory';

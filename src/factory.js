@@ -27,11 +27,8 @@ export default function factory(characters, charactersExtra) {
         // This should always be cached
         let short = shortString(num - 1).split('');
 
-        // We start at the last character
-        let i = short.length - 1;
-
         // Find the first character we can increase
-        for(; i >= 0; i--) {
+        for(let i = short.length - 1; i >= 0; i--) {
             const current = short[i];
             const index = charactersExtra.indexOf(current);
 
@@ -39,16 +36,15 @@ export default function factory(characters, charactersExtra) {
             if((index < characters.length - 1) || (index < charactersExtra.length - 1 && i > 0)) {
                 short[i] = charactersExtra[index + 1];
                 break;
-            // or if we have to prepend a new one
-            } else if(i === 0) {
+            } 
+            
+            // Reset all characters up to the one being incremented
+            short[i] = charactersExtra[0];
+            
+            // if we are at the end we have to prepend a new one
+            if(i === 0) {
                 short = [charactersExtra[0], ...short];
-                break;
             }
-        }
-
-        // Reset all characters behind the one we just incremented
-        for(let j = i + 1; j < short.length; j++) {
-            short[j] = charactersExtra[0];
         }
 
         // Add to cache and return
